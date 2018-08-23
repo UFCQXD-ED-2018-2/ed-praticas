@@ -32,13 +32,59 @@
 #ifndef ANALISE_H
 #define ANALISE_H
 
+#include <stdbool.h>
 #include <stddef.h>
 
+/**
+ * @brief mark_time Cada chamada estabelece um marco de contagem de tempo.
+ * @return Tempo em \a milisegundos desde o último marco estabelecido. Na
+ *         primeira chamada retorna 0.
+ */
 double mark_time(void); // retorno em milisegundos
 
-int* generate_array_insertion_wc(size_t num_elems);
-int* generate_array_selection_wc(size_t num_elems);
+/**
+ * @brief fill_with_insertion_wc Preenche o array \a V com uma entrada de pior
+ *                               caso para o algoritmo \b InsertionSort.
+ * @param V Array a preencher.
+ * @param num_elems Número de posições a preencher.
+ */
+void fill_with_insertion_wc(int V[], int num_elems);
+/**
+ * @brief fill_with_selection_wc Preenche o array \a V com uma entrada de pior
+ *                               caso para o algoritmo \b SelectionSort.
+ * @param V Array a preencher.
+ * @param num_elems Número de posições a preencher.
+ */
+void fill_with_selection_wc(int V[], int num_elems);
 
-int* generate_array_rand(size_t num_elems);
+/**
+ * @brief fill_with_rand Preenche o array \a V com elementos gerados aleatoriamente.
+ * @param V Array a preencher.
+ * @param num_elems Número de posições a preencher.
+ */
+void fill_with_rand(int V[], int num_elems);
+
+/**
+ * @brief check_sorted_asc Verifica se o array \a está ordenado de forma não-decrescente.
+ * @param V Array a verificar.
+ * @param n Quantidade de posições a verificar.
+ * @return \c true se estiver ordenado, \c false caso contrário.
+ */
+bool check_sorted_asc(int V[], int n);
+
+/**
+ * @brief insertion_sort Ordena o array \a V de forma não-decrescente seguindo a
+ *                       lógica de ordenação por inserção, do algoritmo \b InsertionSort.
+ * @param V Array a ordenar.
+ * @param n Quantidade de posições a considerar.
+ */
+void insertion_sort(int V[], int n);
+/**
+ * @brief insertion_sort Ordena o array \a V de forma não-decrescente seguindo a
+ *                       lógica de ordenação por seleção, do algoritmo \b SelectionSort.
+ * @param V Array a ordenar.
+ * @param n Quantidade de posições a considerar.
+ */
+void selection_sort(int V[], int n);
 
 #endif // ANALISE_H

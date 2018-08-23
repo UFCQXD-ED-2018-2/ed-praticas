@@ -31,6 +31,7 @@
 
 #include "analise.h"
 
+#include <stdlib.h>
 #include <time.h>
 
 double mark_time() {
@@ -45,4 +46,23 @@ double mark_time() {
     mark = new_mark;
 
     return elapsed;
+}
+
+void fill_with_rand(int V[], int num_elems) {
+    int i;
+
+    for(i = 0; i < num_elems; ++i) {
+        V[i] = rand();
+    }
+}
+
+bool check_sorted_asc(int V[], int n) {
+    int i;
+
+    for(i = 1; i < n; ++i) {
+        if(V[i-1] > V[i])
+            return false;
+    }
+
+    return true;
 }
