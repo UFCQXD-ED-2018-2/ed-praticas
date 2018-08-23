@@ -8,36 +8,7 @@
 #include "01-analise/analise.h"
 
 void do_tests(int num_elems) {
-    int* array = malloc(sizeof(int)*num_elems);
-    double miliseconds;
 
-    // ------ InsertionSort
-    fill_with_insertion_wc(array, num_elems);
-
-    mark_time();
-    insertion_sort(array, num_elems);
-    miliseconds = mark_time();
-
-    if(check_sorted_asc(array, num_elems)) {
-        printf("\nOrdenado [InsertionSort] em %.0lf ms.\n", miliseconds);
-    } else {
-        fprintf(stderr, "[E] Ordenacao [InsertionSort] falhou.");
-    }
-
-    // ------ SelectionSort
-    fill_with_selection_wc(array, num_elems);
-
-    mark_time();
-    selection_sort(array, num_elems);
-    miliseconds = mark_time();
-
-    if(check_sorted_asc(array, num_elems)) {
-        printf("\nOrdenado [SelectionSort] em %.0lf ms.\n", miliseconds);
-    } else {
-        fprintf(stderr, "[E] Ordenacao [SelectionSort] falhou.");
-    }
-
-    free(array);
 }
 
 int main(int argc, char* argv[])
