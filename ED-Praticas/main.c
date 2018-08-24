@@ -4,9 +4,13 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-//#if defined QXD_ED_ANALISE
 #include "01-analise/analise.h"
 
+/**
+ * @brief do_tests Função onde a execução e a coleta dos tempos de execução devem ser
+ *                 realizadas.
+ * @param num_elems O número de elementos que desejamos considerar nos vetores.
+ */
 void do_tests(int num_elems) {
 
 }
@@ -58,4 +62,3 @@ int main(int argc, char* argv[])
     return 0;
 }
 
-//#endif
